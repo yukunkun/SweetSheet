@@ -154,7 +154,6 @@ public class RecyclerViewDelegate extends Delegate  {
                     sliderIm.circularReveal(sliderIm.getWidth() / 2, sliderIm.getHeight() / 2, 0, sliderIm.getWidth());
                 }
             }
-
         }
 
         @Override

@@ -121,7 +121,6 @@ public class SweetView extends View {
                     mAnimationListener.onEnd();
                 }
             }
-
         });
         valueAnimator.setDuration(500);
         valueAnimator.setInterpolator(new OvershootInterpolator(4f));

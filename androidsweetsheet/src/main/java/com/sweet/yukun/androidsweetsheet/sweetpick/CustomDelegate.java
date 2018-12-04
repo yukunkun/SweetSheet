@@ -177,11 +177,8 @@ public class CustomDelegate extends Delegate {
 
         @Override
         public void onEnd() {
-
-
             if (mStatus == SweetSheet.Status.SHOWING) {
                 mStatus = SweetSheet.Status.SHOW;
-
                 if(mIsDragEnable) {
                     sliderIm.setVisibility(View.VISIBLE);
                     sliderIm.circularReveal(sliderIm.getWidth() / 2, sliderIm.getHeight() / 2, 0, sliderIm.getWidth());
@@ -223,18 +220,14 @@ public class CustomDelegate extends Delegate {
     }
 
     private void alphaAnimation() {
-
-
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(getContentRelativeLayout(), "alpha", 0, 1);
         objectAnimator.setDuration(1200);
         objectAnimator.setInterpolator(new DecelerateInterpolator());
         objectAnimator.start();
 
-
     }
 
     private void duangAnimation() {
-
         Animation animation = AnimationUtils.loadAnimation(mContentRL.getContext(),
                 R.anim.item_duang_show2);
         getContentRelativeLayout().startAnimation(animation);
@@ -242,7 +235,6 @@ public class CustomDelegate extends Delegate {
     }
 
     private void duangLayoutAnimation() {
-
 
         mAnimationView.setLayoutAnimationListener(new Animation.AnimationListener() {
             @Override
