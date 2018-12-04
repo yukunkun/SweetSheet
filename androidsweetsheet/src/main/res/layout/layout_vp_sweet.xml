@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/sheet_height"
         android:layout_gravity="bottom"
+        android:background="@color/white"
         android:id="@+id/freeGrowUpParentF"
         app:offset="@dimen/arc_max_height"
         android:orientation="vertical">
@@ -25,14 +26,15 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="70dp"/>
+            android:paddingTop="30dp"/>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="50dp"
             android:clipChildren="false"
+            android:layout_marginBottom="20dp"
             android:overScrollMode="never"/>
     </com.sweet.yukun.androidsweetsheet.widget.FreeGrowUpParentRelativeLayout>
 

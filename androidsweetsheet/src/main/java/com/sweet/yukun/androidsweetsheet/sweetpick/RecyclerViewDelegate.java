@@ -2,6 +2,7 @@ package com.sweet.yukun.androidsweetsheet.sweetpick;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -67,12 +68,8 @@ public class RecyclerViewDelegate extends Delegate  {
         }else{
             mContentViewHeight=height;
         }
-
         return this;
-
     }
-
-
 
     protected void setMenuList(final List<MenuEntity> menuEntities) {
         mMenuRVAdapter = new MenuRVAdapter(menuEntities, SweetSheet.Type.RecyclerView);
@@ -124,7 +121,6 @@ public class RecyclerViewDelegate extends Delegate  {
         ViewGroup.LayoutParams lp =
                 new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-
         if(mRootView.getParent()!= null){
             mParentVG.removeView(mRootView);
         }
@@ -136,9 +132,7 @@ public class RecyclerViewDelegate extends Delegate  {
     @Override
     protected void dismiss() {
         super.dismiss();
-
     }
-
 
     class AnimationImp implements SweetView.AnimationListener {
 

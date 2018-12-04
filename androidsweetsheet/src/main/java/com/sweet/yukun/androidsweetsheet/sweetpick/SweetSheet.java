@@ -28,7 +28,6 @@ public class SweetSheet {
         RecyclerView,Viewpager,Custom
     }
 
-
     private ViewGroup mParentVG;
     private Delegate mDelegate;
     private Effect mEffect=new NoneEffect();
@@ -62,7 +61,6 @@ public class SweetSheet {
         mDelegate=delegate;
         mDelegate.init(mParentVG);
         setup();
-
     }
 
     public Delegate getDelegate() {
@@ -114,7 +112,6 @@ public class SweetSheet {
     public void show() {
 
         if(mDelegate != null) {
-
             mDelegate.show();
         }else{
             Log.e(Tag,"you must setDelegate before");
@@ -133,7 +130,6 @@ public class SweetSheet {
 
     public void toggle() {
         if(mDelegate != null) {
-
             mDelegate.toggle();
         }else{
             Log.e(Tag,"you must setDelegate before");
@@ -176,7 +172,6 @@ public class SweetSheet {
         }else{
             mMenuEntities=menuEntities;
         }
-
     }
 
 

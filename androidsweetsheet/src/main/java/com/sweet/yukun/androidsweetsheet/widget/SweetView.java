@@ -76,14 +76,11 @@ public class SweetView extends View {
     }
     public void show() {
         mStatus= Status.STATUS_SMOOTH_UP;
-
-
         if(mAnimationListener != null) {
             mAnimationListener.onStart();
             this.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     mAnimationListener.onContentShow();
                 }
             }, 600);
@@ -105,7 +102,6 @@ public class SweetView extends View {
         valueAnimator.setDuration(800);
         valueAnimator.setInterpolator(new AccelerateInterpolator());
         valueAnimator.start();
-
     }
     public void duang(){
         mStatus= Status.STATUS_DOWN;
@@ -118,7 +114,6 @@ public class SweetView extends View {
             }
         });
         valueAnimator.addListener(new SimpleAnimationListener() {
-
 
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -171,7 +166,7 @@ public class SweetView extends View {
 
     public interface  AnimationListener{
 
-         void onStart();
+        void onStart();
         void onEnd();
         void onContentShow();
 

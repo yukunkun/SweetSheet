@@ -2,42 +2,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff8b90af"
+    android:orientation="vertical"
     android:id="@+id/rl"
+    android:background="#b2fd94"
     tools:context=".MainActivity">
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:background="#5dc9ff"
+            android:id="@+id/tv_rv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_viewpager"
+            android:background="#5dc9ff"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:text="viewpager"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_customer"
+            android:background="#5dc9ff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:text="customer"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_height="fill_parent">
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_height="match_parent">
             <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="20dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="200dp"/>
+                android:src="@drawable/tool_icon"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="100dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="400dp"/>
+                android:src="@drawable/tool_icon"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_height="wrap_content" />
             <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="100dp"
-
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="400dp"/>
+                android:src="@drawable/tool_icon"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="100dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="400dp"/>
+                android:src="@drawable/tool_icon"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

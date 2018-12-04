@@ -2,6 +2,7 @@ package com.sweet.yukun.androidsweetsheet.sweetpick;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -51,19 +52,15 @@ public abstract class Delegate implements View.OnClickListener {
     protected abstract void setMenuList(List<MenuEntity> list);
 
     protected void toggle() {
-
         switch (mStatus) {
-
             case SHOW:
             case SHOWING:
                 dismiss();
                 break;
-
             case DISMISS:
             case DISMISSING:
                 show();
                 break;
-
             default:
                 break;
         }
@@ -85,17 +82,16 @@ public abstract class Delegate implements View.OnClickListener {
      */
     protected void showShowdown() {
 
-//        ViewHelper.setTranslationY(mRootView, 0);
+        mRootView.setTranslationY(0);
         mEffect.effect(mParentVG,mBg);
-        ViewGroup.LayoutParams lp =
-                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         if(mBg.getParent()!= null){
             mParentVG.removeView(mBg);
         }
 
         mParentVG.addView(mBg, lp);
-//        ViewHelper.setAlpha(mBg, 0);
+        mRootView.setAlpha(1);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mBg, "alpha", 0, 1);
         objectAnimator.setDuration(400);
         objectAnimator.start();
@@ -138,8 +134,7 @@ public abstract class Delegate implements View.OnClickListener {
         translationOut.addListener(new SimpleAnimationListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                mStatus =
-                        SweetSheet.Status.DISMISSING;
+                mStatus = SweetSheet.Status.DISMISSING;
             }
 
             @Override
@@ -147,17 +142,13 @@ public abstract class Delegate implements View.OnClickListener {
                 mStatus = SweetSheet.Status.DISMISS;
                 mParentVG.removeView(mRootView);
             }
-
         });
         translationOut.start();
-
-
     }
 
 
     protected void setBackgroundEffect(Effect effect) {
         mEffect=effect;
-
     }
 
     protected void setOnMenuItemClickListener(SweetSheet.OnMenuItemClickListener onItemClickListener) {
@@ -169,7 +160,6 @@ public abstract class Delegate implements View.OnClickListener {
      * 延时消失
      */
     protected void delayedDismiss() {
-
 
         mParentVG.postDelayed(new Runnable() {
             @Override

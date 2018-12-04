@@ -44,26 +44,21 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVAdapter.MenuVH> {
 
     @Override
     public MenuVH onCreateViewHolder(ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(mItemLayoutId, null, false);
         return new MenuVH(view);
     }
 
     @Override
     public void onBindViewHolder(MenuVH menuVH, int i) {
-
         menuVH.itemRl.setOnClickListener(mSingleClickListener);
         menuVH.itemRl.setTag(menuVH.getAdapterPosition());
         MenuEntity menuEntity = mDataList.get(i);
         if (menuEntity.iconId != 0) {
-
             menuVH.iv.setVisibility(View.VISIBLE);
             menuVH.iv.setImageResource(menuEntity.iconId);
         } else if (menuEntity.icon != null) {
-
             menuVH.iv.setVisibility(View.VISIBLE);
             menuVH.iv.setImageDrawable(menuEntity.icon);
-
         } else {
             menuVH.iv.setVisibility(View.GONE);
         }
@@ -75,10 +70,8 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVAdapter.MenuVH> {
     }
 
     private void animation(MenuVH menuVH) {
-
-//        ViewHelper.setAlpha(menuVH.itemView, 0);
-//
-//        ViewHelper.setTranslationY(menuVH.itemView, 300);
+        menuVH.itemView.setAlpha(1);
+        menuVH.itemView.setTranslationY(300);
         ObjectAnimator translationY = ObjectAnimator.ofFloat(menuVH.itemView, "translationY", 500, 0);
         translationY.setDuration(300);
         translationY.setInterpolator(new OvershootInterpolator(1.6f));
@@ -108,19 +101,15 @@ public class MenuRVAdapter extends RecyclerView.Adapter<MenuRVAdapter.MenuVH> {
 
 
     static class MenuVH extends RecyclerView.ViewHolder {
-
         public ImageView iv;
         public TextView nameTV;
         public RelativeLayout itemRl;
 
         public MenuVH(View itemView) {
             super(itemView);
-
             iv = (ImageView) itemView.findViewById(R.id.iv);
             nameTV = (TextView) itemView.findViewById(R.id.nameTV);
             itemRl = (RelativeLayout) itemView.findViewById(R.id.itemRl);
-
-
         }
     }
 

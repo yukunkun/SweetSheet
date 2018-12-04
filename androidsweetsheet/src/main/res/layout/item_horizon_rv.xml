@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/nameTV"
             android:paddingLeft="8dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/iv"
             android:duplicateParentState="true"
@@ -34,7 +34,7 @@
             android:paddingRight="8dp"
             android:paddingTop="8dp"
             android:singleLine="true"
-            android:text="删除"
-            android:textSize="18sp"/>
+            android:text=""
+            android:textSize="17sp"/>
     </RelativeLayout>
 </RelativeLayout>
