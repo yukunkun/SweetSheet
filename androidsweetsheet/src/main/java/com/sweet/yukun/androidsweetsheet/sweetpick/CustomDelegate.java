@@ -64,7 +64,7 @@ public class CustomDelegate extends Delegate {
                 .inflate(R.layout.layout_custom_sweet, null, false);
 
         mSweetView = (SweetView) rootView.findViewById(R.id.sv);
-	mSweetView.setSweetSheetColor(sweetSheetColor);
+//	    mSweetView.setSweetSheetColor(sweetSheetColor);
         mFreeGrowUpParentRelativeLayout = (FreeGrowUpParentRelativeLayout) rootView.findViewById(R.id.freeGrowUpParentF);
         mContentRL = (RelativeLayout) rootView.findViewById(R.id.rl);
         sliderIm = (CRImageView) rootView.findViewById(R.id.sliderIM);
